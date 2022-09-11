@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 設計・環境設定
 
-## Getting Started
+## Next.js の環境構築
 
-First, run the development server:
+### Storybook
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- コンポーネントを確認できる
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### CSS in JS ライブラリの実装
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- For Example
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+  - styled-components(``の中に css 書き込んでいけるやつ)
+  - styled-jsx(Vercel が開発してるやつ)
+  - tailwind-css(いつもの className のところに指定するやつ)
+  - emotion(ちなみにとても人気で質の高いホームページに使われているから今一番使いたい)
+  - xstyled(props ベース)
+  - Theme UI(テーマを機能の中心に備えたやつ)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- どれを使うのかの三箇条
+  - 書きやすさ
+  - 開発の活発さ
+  - 捨てやすさ(別のライブラリや自前実装などへの移行のしやすさ)
 
-## Learn More
+### React Hook Form(Form)
 
-To learn more about Next.js, take a look at the following resources:
+- useForm という Hook が使えるようになる
+- For Example
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### SWR(REST API)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- API が叩ける React のライブラリ
 
-## Deploy on Vercel
+### React Content Loader (Loading)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Loading が作れる
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Material Icon(Icon)
+
+- アイコン用でサイズや色はコンポーネントを作るときに span で props から指定して変更できるようにする
+
+### Jest(testing)
+
+- test 用のライブラリ
+
+### data-testid
+
+- getByElementId みたいなやつで取ってくる時に class や id は変更される可能性があるから
+
+### JSONServer(backend)
+
+- backend
+- REST API のダミーエンドポイントを作成するためのツール
+
+# Next.js の実装
