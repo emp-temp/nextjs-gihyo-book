@@ -51,5 +51,3 @@
 
 - backend
 - REST API のダミーエンドポイントを作成するためのツール
-
-# Next.js の実装
